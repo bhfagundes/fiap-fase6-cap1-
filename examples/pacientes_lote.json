@@ -1,0 +1,23 @@
+[
+  {
+    "idade": 55,
+    "freq_cardiaca": 82,
+    "spo2": 97,
+    "carga_sistema": 40,
+    "disponibilidade_recursos": 75
+  },
+  {
+    "idade": 68,
+    "freq_cardiaca": 105,
+    "spo2": 91,
+    "carga_sistema": 70,
+    "disponibilidade_recursos": 50
+  },
+  {
+    "idade": 79,
+    "freq_cardiaca": 125,
+    "spo2": 86,
+    "carga_sistema": 95,
+    "disponibilidade_recursos": 25
+  }
+]
