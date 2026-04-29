@@ -1,8 +1,7 @@
-# Documentação — Parte 2 (sistema multiagente) · máx. 3 páginas (fonte para PDF)
+# 📄 Documentação — Parte 2 (Sistema Multiagente)
+**Projeto:** CardioIA — Fase 6  
 
-**Projeto:** CardioIA — Fase 6 · **Grupo 34**
-
-## 1. Diagrama simplificado da arquitetura
+## 🧩 1. Diagrama Simplificado da Arquitetura
 
 ```mermaid
 flowchart LR
@@ -14,9 +13,10 @@ flowchart LR
   P --> S[Saida CardiacDecision validada]
 ```
 
-Fluxo lógico: o **Orquestrador** delega via **handoff** ao **Analista de Risco**, que executa a *tool* de inferência sobre o artefato persistido; em seguida o analista transfere ao **Especialista em Protocolos**, que consulta a base simulada e emite a **resposta estruturada** (`CardiacDecision`) com validação Pydantic (structured output do Agents SDK).
+**Fluxo lógico:** 
+O **Orquestrador** delega via **handoff** ao **Analista de Risco**, que executa a *tool* de inferência sobre o artefato persistido; em seguida o analista transfere ao **Especialista em Protocolos**, que consulta a base simulada e emite a **resposta estruturada** (`CardiacDecision`) com validação Pydantic (structured output do Agents SDK).
 
-## 2. Papel de cada agente
+## 🤖 2. Papel de cada agente
 
 | Agente | Função |
 |--------|--------|
@@ -24,13 +24,13 @@ Fluxo lógico: o **Orquestrador** delega via **handoff** ao **Analista de Risco*
 | **Analista de Risco** | Extrai features do JSON do paciente, chama a *tool* `prever_pico_risco_cardiaco` (integração com o modelo) e encaminha ao especialista em protocolos. |
 | **Especialista em Protocolos** | Cruza `classificacao_risco` e SpO2 com a base `data/protocolos_medicos.json` via *tool* `consultar_protocolos_medicos` e produz a decisão final estruturada. |
 
-## 3. Handoffs e tools
+## 🔄 3. Handoffs e tools
 
 - **Handoffs:** implementados como ferramentas geradas pelo SDK (`transfer_to_*`), conectando Orquestrador → Analista → Especialista. O histórico de mensagens acompanha a cadeia, permitindo auditoria e rastreio.  
 - **Tools:** funções Python anotadas com `@function_tool` — predição ML e consulta de protocolos — com esquemas explícitos nos docstrings para o modelo.  
 - **Validação de saída:** o Especialista define `output_type=CardiacDecision`, garantindo campos obrigatórios: probabilidade, classificação em quatro níveis e lista de protocolos.
 
-## 4. Exemplo real de entrada e saída (trecho de log)
+## 📥 4. Exemplo real de entrada e saída (trecho de log)
 
 **Entrada (resumo):**
 
@@ -52,4 +52,4 @@ Fluxo lógico: o **Orquestrador** delega via **handoff** ao **Analista de Risco*
 }
 ```
 
-**Vídeo (≤3 min, YouTube não listado):** link no `README.md` do repositório.
+🎥 **Link do vídeo no `README.md` do repositório.**
