@@ -1,4 +1,4 @@
-# 🚀 Ir Além 2 — Otimização e Escalabilidade
+# Ir Além 2 — Otimização e Escalabilidade
 
 ## 🧱 1. Estrutura Modular Implementada
 
